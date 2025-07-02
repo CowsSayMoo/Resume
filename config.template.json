@@ -1,0 +1,41 @@
+{
+  "address": "Your City, Province, Postal Code",
+  "phone": "Your Phone Number",
+  "email": "your.email@example.com",
+  "github": "github.com/yourusername",
+  "behance": "behance.net/yourprofile",
+  "profileImage": "your-profile-image.png",
+  "skills": {
+    "networking": 1,
+    "scripting": 1,
+    "devops": 1,
+    "cloud": 1,
+    "cybersecurity": 1
+  },
+  "skillLabels": {
+    "networking": "Networking",
+    "scripting": "Scripting en Automatisering",
+    "devops": "DevOps",
+    "cloud": "Cloud Computing",
+    "cybersecurity": "Cybersecurity"
+  },
+  "software": [
+    "Tool 1",
+    "Tool 2",
+    "Tool 3",
+    "Programming Language 1",
+    "Programming Language 2",
+    "Cloud Platform 1",
+    "Cloud Platform 2",
+    "CI/CD Tool",
+    "Monitoring Tool",
+    "Container Platform",
+    "IaC Tool",
+    "Version Control",
+    "Operating System",
+    "Database",
+    "Web Server",
+    "Additional Tool 1",
+    "Additional Tool 2"
+  ]
+}
