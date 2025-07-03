@@ -1,9 +1,49 @@
 {
-  "address": "Your City, Province, Postal Code",
-  "phone": "Your Phone Number",
-  "email": "your.email@example.com",
-  "github": "github.com/yourusername",
-  "behance": "behance.net/yourprofile",
+  "sectionLabels": {
+    "contact": "Contact",
+    "skills": "Skills",
+    "software": "Software", 
+    "education": "Education",
+    "experience": "Work Experience"
+  },
+  "sectionOrder": ["experience", "education", "certifications", "projects"],
+  "personal": {
+    "name": "Your Full Name",
+    "title": "Your Job Title",
+    "bio": "Your professional biography describing your expertise, interests, and what makes you valuable as a professional. Keep it concise but engaging."
+  },
+  "contactMethods": [
+    {
+      "type": "address",
+      "label": "Address:",
+      "value": "Your City, Province, Postal Code"
+    },
+    {
+      "type": "phone",
+      "label": "Phone:",
+      "value": "Your Phone Number"
+    },
+    {
+      "type": "email", 
+      "label": "Email:",
+      "value": "your.email@example.com"
+    },
+    {
+      "type": "linkedin",
+      "label": "LinkedIn:",
+      "value": "linkedin.com/in/yourprofile"
+    },
+    {
+      "type": "github",
+      "label": "GitHub:",
+      "value": "github.com/yourusername"
+    },
+    {
+      "type": "website",
+      "label": "Website:",
+      "value": "yourwebsite.com"
+    }
+  ],
   "profileImage": "images/your-profile-image.png",
   "skills": {
     "networking": 1,
@@ -37,5 +77,92 @@
     "Web Server",
     "Additional Tool 1",
     "Additional Tool 2"
+  ],
+  "education": [
+    {
+      "degree": "Your Degree Title",
+      "school": "School/University Name, Location",
+      "period": "Start Date - End Date",
+      "highlights": [
+        "<strong>Key Area 1:</strong> Description of what you learned or achieved in this area.",
+        "<strong>Key Area 2:</strong> Description of specialization or notable projects."
+      ]
+    },
+    {
+      "degree": "Another Degree (if applicable)",
+      "school": "Another School Name, Location", 
+      "period": "Start Date - End Date",
+      "highlights": [
+        "<strong>Focus Area:</strong> What you learned or specialized in.",
+        "<strong>Skills Gained:</strong> Key skills or knowledge acquired."
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Company Name",
+      "position": "Your Job Title",
+      "period": "Start Date - End Date",
+      "responsibilities": [
+        "Key responsibility or achievement 1",
+        "Key responsibility or achievement 2",
+        "Key responsibility or achievement 3"
+      ]
+    },
+    {
+      "company": "Previous Company",
+      "position": "Previous Job Title",
+      "period": "Start Date - End Date",
+      "responsibilities": [
+        "What you did in this role",
+        "Major achievements or projects"
+      ]
+    }
+  ],
+  "customSections": [
+    {
+      "id": "certifications",
+      "title": "Certifications",
+      "type": "list",
+      "items": [
+        {
+          "name": "AWS Certified Solutions Architect",
+          "date": "2024",
+          "description": "Cloud architecture and deployment"
+        },
+        {
+          "name": "Google Cloud Professional",
+          "date": "2023",
+          "description": "Professional cloud architect certification"
+        },
+        "Simple certification without date or description"
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Key Projects",
+      "type": "detailed",
+      "items": [
+        {
+          "title": "E-commerce Platform Redesign",
+          "subtitle": "Lead Developer - 2024",
+          "description": "Led the complete redesign of the company's e-commerce platform, improving performance by 40%.",
+          "highlights": [
+            "Implemented microservices architecture",
+            "Reduced page load times by 60%",
+            "Increased conversion rate by 25%"
+          ]
+        },
+        {
+          "title": "Mobile App Development",
+          "subtitle": "Full-Stack Developer - 2023",
+          "description": "Developed cross-platform mobile application using React Native.",
+          "highlights": [
+            "Published on both iOS and Android stores",
+            "Achieved 10,000+ downloads in first month"
+          ]
+        }
+      ]
+    }
   ]
 }

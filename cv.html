@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume Template</title>
+    <title id="page-title">Resume Template</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,33 +12,21 @@
         <div class="profile-img"></div>
 
         <div class="section">
-          <h2>Contact</h2>
-          <div class="contact-item" data-type="address">
-            <strong>Adres:</strong>
-          </div>
-          <div class="contact-item" data-type="phone">
-            <strong>Telefoon:</strong>
-          </div>
-          <div class="contact-item" data-type="email">
-            <strong>E-mail:</strong>
-          </div>
-          <div class="contact-item" data-type="github">
-            <strong>GitHub:</strong>
-          </div>
-          <div class="contact-item" data-type="behance">
-            <strong>Behance:</strong>
+          <h2 id="section-contact">Contact</h2>
+          <div id="contact-container">
+            <!-- Contact items will be populated dynamically -->
           </div>
         </div>
 
         <div class="section">
-          <h2>Vaardigheden</h2>
+          <h2 id="section-skills">Skills</h2>
           <div id="skills-container">
             <!-- Skills will be populated dynamically -->
           </div>
         </div>
 
         <div class="section">
-          <h2>Software</h2>
+          <h2 id="section-software">Software</h2>
           <div class="software-tags" id="software-container">
             <!-- Software tags will be populated dynamically -->
           </div>
@@ -47,111 +35,15 @@
 
       <div class="main-content">
         <div class="header">
-          <h1>Niels Verhoeven</h1>
-          <div class="title">DevOps Engineer</div>
-          <div class="bio">
-            IT-specialist gepassioneerd over het leren van nieuwe technologieën
-            en het ondersteunen van teams door middel van innovatieve
-            oplossingen. Met sterke interesse in automatisering, Linux,
-            cybersecurity en AI, ben ik iemand waarop je kunt vertrouwen en op
-            kunt bouwen
+          <h1 id="personal-name">Your Name</h1>
+          <div class="title" id="personal-title">Your Job Title</div>
+          <div class="bio" id="personal-bio">
+            Your professional biography will appear here...
           </div>
         </div>
 
-        <div class="section">
-          <h2>Opleiding</h2>
-
-          <div class="education-item">
-            <h3>Professionele Bachelor Toegepaste Informatica</h3>
-            <div class="school">
-              Hogeschool PXL, Hasselt: April 2021 - Juni 2025
-            </div>
-            <ul>
-              <li>
-                <strong>Algemene Informatica-opleiding:</strong>
-                Brede kennisbasis opgebouwd in de verschillende facetten van IT,
-                waaronder programmeren, netwerken, kunstmatige intelligentie en
-                software management.
-              </li>
-              <li>
-                <strong>Specialisatie Systemen en Netwerken:</strong>
-                Verdiepende focus op DevOps-methodologieën en
-                automatiseringsprocessen, met praktijkgerichte projecten in
-                infrastructuurbeheer en deployment-optimalisatie.
-              </li>
-            </ul>
-          </div>
-
-          <div class="education-item">
-            <h3>Academische Bachelor Product Design</h3>
-            <div class="school">
-              Luca School Of Arts, Genk: Januari 2018 - Juni 2021 (3 jaar
-              gevolgd)
-            </div>
-            <ul>
-              <li>
-                <strong>Mensgerichte Ontwerpprincipes:</strong> Uitgebreide
-                kennis opgedaan in het ontwerpen van producten met en voor
-                mensen, waarbij gebruikersbehoeften centraal staan in het
-                ontwerpproces.
-              </li>
-              <li>
-                <strong>Interdisciplinaire Benadering:</strong> Brede
-                academische basis ontwikkeld door diverse disciplines, van
-                psychologie en sociologie tot materiaalwetenschap, om
-                gebruikerswensen en -behoeften te begrijpen en te vertalen naar
-                concrete oplossingen.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="section">
-          <h2>Werkervaring</h2>
-
-          <div class="job">
-            <h3>Gluo</h3>
-            <div class="position">
-              DevOps Engineer Stagiair: April 2025 - Juni 2025
-            </div>
-            <ul>
-              <li>
-                Implementatie van Monitoring as a Service oplossing met
-                automatische dashboard deployment
-              </li>
-              <li>
-                Configuratie van Single Sign-On (SSO) voor Grafana-instantie
-              </li>
-              <li>Ontwikkeling van lokale Docker-omgeving voor testing</li>
-            </ul>
-          </div>
-
-          <div class="job">
-            <h3>Servilux / Let Me Repair</h3>
-            <div class="position">
-              TV-technicus & Orderverzamelaar (Studentenjob): Mei 2021 - Maart
-              2024
-            </div>
-            <ul>
-              <li>
-                Elektronische componenten installeren, testen en repareren
-              </li>
-              <li>Diagnostische tests en technische probleemoplossing</li>
-            </ul>
-          </div>
-
-          <div class="job">
-            <h3>CoderDojo</h3>
-            <div class="position">
-              Programmeer Coach (Vrijwilligerswerk): 2023
-            </div>
-            <ul>
-              <li>
-                Lesgeven aan kinderen in programmeervaardigheden (Scratch)
-              </li>
-              <li>Mentorschap bij eerste programmeerprojecten</li>
-            </ul>
-          </div>
+        <div id="main-sections-container">
+          <!-- Main sections will be populated dynamically based on section order -->
         </div>
       </div>
     </div>
