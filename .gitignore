@@ -1,3 +1,8 @@
+# Personal configuration file
+config/config.json
+
+# Image files (optional - remove if you want to track images)
 *.png
 *.jpg
-config.json
+images/*.png
+images/*.jpg

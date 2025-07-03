@@ -1,13 +1,13 @@
 // Function to load config from external file (required)
 async function loadConfig() {
     try {
-        const response = await fetch('./config.json');
+        const response = await fetch('./config/config.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         return await response.json();
     } catch (error) {
-        console.error('Failed to load config.json:', error);
+        console.error('Failed to load config/config.json:', error);
         return {};
     }
 }

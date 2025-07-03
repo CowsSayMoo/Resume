@@ -4,7 +4,7 @@
   "email": "your.email@example.com",
   "github": "github.com/yourusername",
   "behance": "behance.net/yourprofile",
-  "profileImage": "your-profile-image.png",
+  "profileImage": "images/your-profile-image.png",
   "skills": {
     "networking": 1,
     "scripting": 1,

@@ -15,12 +15,14 @@ A modern, dynamic CV/Resume template built with HTML, CSS, and JavaScript. The t
 ## File Structure
 
 ```
-├── cv.html              # Main HTML file
-├── styles.css           # All CSS styling
-├── script.js            # JavaScript functionality
-├── config.template.json # Template configuration file
-├── config.json          # Your personal configuration (create from template)
-└── README.md            # This file
+├── cv.html                     # Main HTML file
+├── styles.css                  # All CSS styling
+├── script.js                   # JavaScript functionality
+├── config/
+│   ├── config.template.json    # Template configuration file
+│   └── config.json             # Your personal configuration (create from template)
+├── images/                     # Profile images and other assets
+└── README.md                   # This file
 ```
 
 ## Setup Instructions
@@ -29,15 +31,15 @@ A modern, dynamic CV/Resume template built with HTML, CSS, and JavaScript. The t
 
 1. **Copy the template configuration file**:
    ```bash
-   cp config.template.json config.json
+   cp config/config.template.json config/config.json
    ```
 
 2. **Edit your personal information**:
-   Open `config.json` and update it with your personal details, skills, and software tools.
+   Open `config/config.json` and update it with your personal details, skills, and software tools.
 
 ### 2. Configuration File Structure
 
-The `config.json` file should contain:
+The `config/config.json` file should contain:
 
 ```json
 {
@@ -46,7 +48,7 @@ The `config.json` file should contain:
   "email": "your.email@example.com",
   "github": "github.com/yourusername",
   "behance": "behance.net/yourusername",
-  "profileImage": "path/to/your/photo.jpg",
+  "profileImage": "images/your-photo.jpg",
   "skills": {
     "networking": 4,
     "scripting": 4,
@@ -82,8 +84,8 @@ Skills are rated on a scale of 1-5:
 
 ### 4. Adding Your Photo
 
-1. Place your profile photo in the same directory as the HTML files
-2. Update the `profileImage` field in `config.json` with the relative path to your image
+1. Place your profile photo in the `images/` directory
+2. Update the `profileImage` field in `config/config.json` with the relative path to your image (e.g., `"images/profile.jpg"`)
 3. Recommended image size: 170x170 pixels (square format)
 
 ### 5. Viewing Your Resume
@@ -115,23 +117,26 @@ The template is optimized for printing to PDF:
 ### Configuration Not Loading
 
 If your personal information doesn't appear:
-1. Ensure `config.json` exists in the same directory as `cv.html`
+1. Ensure `config/config.json` exists in the config directory
 2. Check the browser console for any error messages
 3. Verify the JSON syntax is valid
 
 ### Images Not Displaying
 
-1. Check the file path in `config.json` is correct
-2. Ensure the image file exists in the specified location
-3. Use relative paths (e.g., `./photo.jpg` or `images/photo.jpg`)
+1. Check the file path in `config/config.json` is correct (should start with `images/`)
+2. Ensure the image file exists in the `images/` directory
+3. Use relative paths from the root directory (e.g., `images/photo.jpg`)
 
 ## File Locations
 
-**Important**: Keep `config.json` in the same directory as `cv.html` for the template to work properly.
+**Important**: 
+- Keep `config/config.json` in the config directory for the template to work properly
+- Place all images in the `images/` directory
+- The main HTML, CSS, and JS files should remain in the root directory
 
 ## Security Note
 
-The `config.json` file contains your personal information. If you're hosting this publicly or sharing the code, make sure to:
-- Add `config.json` to your `.gitignore` file
-- Only share the template files (`config.template.json`, not `config.json`)
-- Keep your personal `config.json` file private
+The `config/config.json` file contains your personal information. If you're hosting this publicly or sharing the code, make sure to:
+- Add `config/config.json` to your `.gitignore` file
+- Only share the template files (`config/config.template.json`, not `config/config.json`)
+- Keep your personal `config/config.json` file private
