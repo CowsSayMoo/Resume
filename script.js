@@ -20,6 +20,58 @@ function setCSSVariables(configData) {
     }
 }
 
+// Apply theme configuration (colors and fonts)
+function applyTheme(theme) {
+    if (!theme) return;
+    
+    const root = document.documentElement;
+    
+    // Apply custom colors
+    if (theme.colors) {
+        if (theme.colors.primary) {
+            root.style.setProperty('--primary-color', theme.colors.primary);
+        }
+        if (theme.colors.secondary) {
+            root.style.setProperty('--secondary-color', theme.colors.secondary);
+        }
+        if (theme.colors.sidebarBackground) {
+            root.style.setProperty('--sidebar-bg', theme.colors.sidebarBackground);
+        }
+        if (theme.colors.textPrimary) {
+            root.style.setProperty('--text-primary', theme.colors.textPrimary);
+        }
+        if (theme.colors.textSecondary) {
+            root.style.setProperty('--text-secondary', theme.colors.textSecondary);
+        }
+        
+        // Use tag-specific colors if provided, otherwise fall back to primary/secondary
+        const tagPrimary = theme.colors.tagPrimary || theme.colors.primary;
+        const tagSecondary = theme.colors.tagSecondary || theme.colors.secondary;
+        
+        if (tagPrimary) {
+            root.style.setProperty('--tag-primary', tagPrimary);
+        }
+        if (tagSecondary) {
+            root.style.setProperty('--tag-secondary', tagSecondary);
+        }
+    }
+    
+    // Apply custom font
+    if (theme.fontFamily) {
+        root.style.setProperty('--font-family', theme.fontFamily);
+        document.body.style.fontFamily = theme.fontFamily;
+    }
+    
+    // Apply custom background gradient or generate from primary/secondary colors
+    if (theme.backgroundGradient) {
+        document.body.style.background = theme.backgroundGradient;
+    } else if (theme.colors && theme.colors.primary && theme.colors.secondary) {
+        // Auto-generate gradient from primary and secondary colors
+        const gradient = `linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.secondary} 100%)`;
+        document.body.style.background = gradient;
+    }
+}
+
 // Set section headers from config
 function setSectionHeaders(sectionLabels) {
     if (!sectionLabels) return;
@@ -387,6 +439,11 @@ function setExperience(experienceList) {
 document.addEventListener('DOMContentLoaded', async () => {
     const configData = await loadConfig();
     setCSSVariables(configData);
+    
+    // Apply theme configuration
+    if (configData.theme) {
+        applyTheme(configData.theme);
+    }
     
     // Set section headers for sidebar sections
     if (configData.sectionLabels) {
