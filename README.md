@@ -2,476 +2,66 @@
 
 A modern, dynamic CV/Resume template built with HTML, CSS, and JavaScript. This template features a clean, professional design with completely customizable content through JSON configuration files. No coding required - just edit the config file!
 
-## Features
-
-- **🎨 Responsive Design**: Works perfectly on desktop and mobile devices
-- **🖨️ Print-Friendly**: Optimized for PDF generation with proper background colors
-- **⚡ 100% Dynamic Content**: Everything is configurable through JSON - no hardcoded text
-- **🌍 Multi-Language Support**: Easy internationalization with configurable labels
-- **📱 Professional Layout**: Clean sidebar with main content area
-- **🎯 Flexible Section Ordering**: Arrange sections to emphasize what matters most
-- **🏆 Custom Sections**: Add certifications, projects, awards, or any section you need
-- **🔧 Multiple Section Types**: List, detailed, and grid layouts for custom content
-- **🎨 Gradient Design**: Modern gradient backgrounds and visual elements
-- **📊 Skill Visualization**: Interactive dot-based skill level indicators
-- **🛠️ Software Tags**: Dynamic software/tools display
-
 ## Example Resume
 
-
 **[📄 View PDF Example](images/example-resume.pdf)** - See the complete one-page resume generated from the example configuration.
-
-The example demonstrates:
-- Professional layout with gradient design
-- Skills visualization with dot indicators
-- Dynamic software tags
-- Multiple sections (Education, Experience, Certifications, Projects)
-- Clean typography and spacing optimized for both screen and print
-
-## File Structure
-
-```
-Resume/
-├── cv.html                     # Main HTML file (template)
-├── styles.css                  # All CSS styling
-├── script.js                   # JavaScript functionality
-├── config-builder.html         # Visual configuration builder with live preview
-├── example-resume.pdf          # Example PDF output
-├── config/
-│   ├── config.template.json    # Template configuration file
-│   ├── example-config.json     # Example configuration with sample data
-│   └── config.json             # Your personal configuration (create from template)
-├── images/                     # Profile images and other assets
-│   └── example-resume.png      # Screenshot of example resume
-└── README.md                   # This documentation
-```
 
 ## Quick Start
 
 ### Option 1: Visual Configuration Builder (Recommended)
 
-1. **Open the configuration builder**:
-   - Open `config-builder.html` in your browser
-   - Use the visual form interface to input your information
-   - See live preview of your resume as you make changes
-   - Download your configuration file when done
-
-2. **View your resume**:
-   - Open `cv.html` in your browser to see your completed resume
+1. **Open the configuration builder**: Open `config-builder.html` in your browser
+2. **Fill in your information**: Use the visual form interface to input your details
+3. **See live preview**: Watch your resume update in real-time
+4. **Download your config**: Save your configuration file when done
+5. **View your resume**: Open `cv.html` in your browser
 
 ### Option 2: Manual Configuration
 
-1. **Copy the template configuration file**:
-   ```bash
-   cp config/config.template.json config/config.json
-   ```
-
-2. **View the example**:
+1. **Copy the example**:
    ```bash
    cp config/example-config.json config/config.json
    ```
-   This will show you a complete example resume with sample data.
+2. **Edit your information**: Open `config/config.json` and update with your details
+3. **Add your photo**: Place your photo in the `images/` directory and update the `profileImage` path
+4. **View your resume**: Open `cv.html` in your browser
 
-3. **Add your profile photo**:
-   - Place your photo in the `images/` directory
-   - Update the `profileImage` path in your config
+### Generate PDF
 
-4. **Edit your information**:
-   - Open `config/config.json`
-   - Update with your personal details, skills, experience, etc.
-
-5. **Open in browser**:
-   - Simply open `cv.html` in your web browser
-   - Your resume will load dynamically!
-
-### Generating PDF
-
-To create a PDF version of your resume:
-
-1. **Open your resume in browser**: Load `cv.html` with your configuration
-2. **Print to PDF**: Use your browser's print function (Ctrl+P / Cmd+P)
-3. **Print settings**:
-   - Destination: Save as PDF
-   - Layout: Portrait
-   - Margins: None or Minimal
-   - Options: Check "Background graphics" to preserve colors and gradients
-4. **Save**: Your professional PDF resume is ready!
-
-> **Tip**: The template is optimized for A4/Letter size printing with proper page breaks and background color preservation.
-
-## Configuration Guide
-
-### Personal Information
-```json
-"personal": {
-  "name": "Your Full Name",
-  "title": "Your Job Title",
-  "bio": "Your professional biography..."
-}
-```
-
-### Contact Methods (Fully Customizable)
-```json
-"contactMethods": [
-  {
-    "type": "email",
-    "label": "Email:",
-    "value": "your@email.com"
-  },
-  {
-    "type": "linkedin", 
-    "label": "LinkedIn:",
-    "value": "linkedin.com/in/yourprofile"
-  }
-]
-```
-
-### Section Labels (Multi-Language Support)
-```json
-"sectionLabels": {
-  "contact": "Contact",
-  "skills": "Skills",
-  "software": "Software",
-  "education": "Education", 
-  "experience": "Work Experience"
-}
-```
-
-### Section Ordering (Emphasize What Matters)
-```json
-"sectionOrder": ["experience", "education", "certifications"]
-```
-
-**Popular configurations:**
-- **Experienced professionals**: `["experience", "education"]`
-- **Recent graduates**: `["education", "experience"]` 
-- **Career changers**: `["certifications", "experience", "education"]`
-
-### Theme & Styling
-```json
-"theme": {
-  "colors": {
-    "primary": "#667eea",
-    "secondary": "#764ba2",
-    "sidebarBackground": "#2d3748",
-    "textPrimary": "#333",
-    "textSecondary": "#666"
-  },
-  "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
-}
-```
-*All theme properties are optional. Background gradient and tag colors are auto-generated from primary/secondary colors.*
-
-### Skills with Visual Ratings
-```json
-"skills": {
-  "programming": 4,
-  "leadership": 5,
-  "design": 3
-},
-"skillLabels": {
-  "programming": "Programming",
-  "leadership": "Team Leadership", 
-  "design": "UI/UX Design"
-}
-```
-
-### Education & Experience
-```json
-"education": [
-  {
-    "degree": "Bachelor of Computer Science",
-    "school": "University Name, Location",
-    "period": "2020-2024",
-    "highlights": [
-      "<strong>Specialization:</strong> Software Engineering",
-      "<strong>GPA:</strong> 3.8/4.0"
-    ]
-  }
-]
-```
-
-### Custom Sections (Unlimited Flexibility)
-
-#### Certifications (List Type)
-```json
-{
-  "id": "certifications",
-  "title": "Certifications",
-  "type": "list",
-  "items": [
-    {
-      "name": "AWS Certified Solutions Architect",
-      "date": "2024",
-      "description": "Cloud architecture and deployment"
-    }
-  ]
-}
-```
-
-#### Projects (Detailed Type)
-```json
-{
-  "id": "projects", 
-  "title": "Key Projects",
-  "type": "detailed",
-  "items": [
-    {
-      "title": "E-commerce Platform",
-      "subtitle": "Lead Developer - 2024",
-      "description": "Built scalable e-commerce solution",
-      "highlights": [
-        "Improved performance by 40%",
-        "Reduced costs by $50k annually"
-      ]
-    }
-  ]
-}
-```
-
-#### Additional Skills (Grid Type)
-```json
-{
-  "id": "languages",
-  "title": "Languages", 
-  "type": "grid",
-  "items": ["English (Native)", "Spanish (Fluent)", "French (Basic)"]
-}
-```
-
-## Skill Levels
-
-Skills are rated on a scale of 1-5:
-- **1** = Beginner
-- **2** = Basic  
-- **3** = Intermediate
-- **4** = Advanced
-- **5** = Expert
-
-## Advanced Features
-
-### Multi-Language Versions
-
-Create different language versions:
-```bash
-# English version
-cp config/config.template.json config/config-en.json
-
-# Spanish version  
-cp config/config.template.json config/config-es.json
-
-# German version
-cp config/config.template.json config/config-de.json
-```
-
-Then modify the script to load different configs based on URL parameters or user selection.
-
-### Custom Section Types
-
-The template supports three built-in section types:
-
-1. **List**: Perfect for certifications, awards, languages
-2. **Detailed**: Ideal for projects, publications, speaking engagements  
-3. **Grid**: Great for additional skills, tools, technologies
-
-### Print/PDF Generation
-
-1. Open your resume in the browser
+1. Open `cv.html` in your browser
 2. Press `Ctrl+P` (or `Cmd+P` on Mac)
-3. Select "Save as PDF" 
+3. Select "Save as PDF"
 4. **Important**: Enable "Background graphics" for proper colors
-5. Recommended: Use A4 paper size
+5. Save your professional PDF resume
 
-## Customization
+> **📖 Need more detailed instructions?** See the [complete usage guide](USAGE.md) for advanced configuration, theme customization, troubleshooting, and best practices.
 
-### Theme Configuration
+## Features
 
-You can completely customize the appearance of your resume by adding a `theme` section to your `config.json`. The theme supports:
+All content is controlled through `config/config.json`. Key sections include:
 
-**Colors:**
-- `primary`: Primary color (used for background gradient and tags/dots)
-- `secondary`: Secondary color (used for background gradient and tags/dots)
-- `sidebarBackground`: Sidebar background color
-- `textPrimary`: Main text color
-- `textSecondary`: Secondary text color
-- `tagPrimary`: _(Optional)_ Override primary color specifically for tags/dots
-- `tagSecondary`: _(Optional)_ Override secondary color specifically for tags/dots
+- **Personal Info**: Name, title, bio, profile image
+- **Contact Methods**: Email, phone, LinkedIn, GitHub, etc.
+- **Skills**: Rated 1-5 with visual dots
+- **Software**: Tags for technologies and tools
+- **Education & Experience**: Standard resume sections
+- **Custom Sections**: Certifications, projects, awards, etc.
+- **Theme**: Colors, fonts, and styling
 
-**Typography:**
-- `fontFamily`: Custom font family (use web-safe fonts or Google Fonts)
+## File Structure
 
-**Background:**
-- `backgroundGradient`: _(Optional)_ Custom CSS gradient (auto-generated from primary/secondary if omitted)
-
-**Simple theme configuration:**
-```json
-{
-  "theme": {
-    "colors": {
-      "primary": "#4a90e2",
-      "secondary": "#7b68ee",
-      "sidebarBackground": "#1a202c",
-      "textPrimary": "#2d3748",
-      "textSecondary": "#718096"
-    },
-    "fontFamily": "'Inter', 'Helvetica Neue', Arial, sans-serif"
-  }
-}
 ```
-
-**Advanced configuration (separate tag colors):**
-```json
-{
-  "theme": {
-    "colors": {
-      "primary": "#4a90e2",
-      "secondary": "#7b68ee",
-      "sidebarBackground": "#1a202c",
-      "textPrimary": "#2d3748",
-      "textSecondary": "#718096",
-      "tagPrimary": "#e53e3e",
-      "tagSecondary": "#c53030"
-    },
-    "fontFamily": "'Inter', 'Helvetica Neue', Arial, sans-serif",
-    "backgroundGradient": "radial-gradient(circle at top right, #667eea 0%, #764ba2 100%)"
-  }
-}
+Resume/
+├── cv.html                     # Main resume template
+├── config-builder.html         # Visual configuration builder
+├── example-resume.pdf          # Example PDF output
+├── USAGE.md                    # Detailed usage guide
+├── config/
+│   ├── config.template.json    # Template configuration
+│   ├── example-config.json     # Example with sample data
+│   └── config.json             # Your personal configuration
+└── images/                     # Profile images and assets
 ```
-
-**Popular Color Schemes:**
-
-*Blue Professional:*
-```json
-"colors": {
-  "primary": "#2563eb",
-  "secondary": "#1d4ed8",
-  "sidebarBackground": "#1e3a8a",
-  "textPrimary": "#1f2937",
-  "textSecondary": "#6b7280"
-}
-```
-
-*Green Fresh:*
-```json
-"colors": {
-  "primary": "#059669",
-  "secondary": "#047857",
-  "sidebarBackground": "#064e3b",
-  "textPrimary": "#111827",
-  "textSecondary": "#6b7280"
-}
-```
-
-*Purple Creative:*
-```json
-"colors": {
-  "primary": "#7c3aed",
-  "secondary": "#6d28d9",
-  "sidebarBackground": "#581c87",
-  "textPrimary": "#1f2937",
-  "textSecondary": "#6b7280"
-}
-```
-
-**Smart Defaults:** If you only specify `primary` and `secondary` colors, the system will:
-- Auto-generate a background gradient using those colors
-- Use the same colors for software tags and skill dots
-- This keeps your config clean while maintaining full customization power
-
-**Print-Friendly Note:** The background gradient won't appear when printing, but the tag colors (software tags and skill dots) will remain visible and customizable.
-
-### Adding New Section Types
-
-1. Add your section type to the `setCustomSections()` function in `script.js`
-2. Create corresponding CSS styles in `styles.css`
-3. Update this README with examples
-
-### Layout Modifications
-
-- **Sidebar sections**: Contact, Skills, Software (fixed)
-- **Main sections**: Education, Experience, Custom sections (configurable order)
-- **Header**: Personal information (always at top)
-
-## Common Use Cases
-
-### For Different Career Stages
-
-**🎓 Recent Graduate**:
-```json
-"sectionOrder": ["education", "experience", "projects", "certifications"]
-```
-
-**💼 Experienced Professional**:
-```json  
-"sectionOrder": ["experience", "certifications", "education"]
-```
-
-**🔄 Career Changer**:
-```json
-"sectionOrder": ["certifications", "projects", "experience", "education"] 
-```
-
-### For Different Industries
-
-**👨‍💻 Software Developer**:
-- Add: Projects, Open Source Contributions, Technical Certifications
-
-**🎨 Designer**:
-- Add: Portfolio Projects, Design Awards, Creative Tools
-
-**📊 Business Professional**:
-- Add: Achievements, Leadership Experience, Business Certifications
-
-**🔬 Researcher**:
-- Add: Publications, Research Projects, Academic Honors
-
-## Troubleshooting
-
-### Configuration Not Loading
-- Ensure `config/config.json` exists
-- Check browser console for error messages
-- Validate JSON syntax using an online JSON validator
-
-### Images Not Displaying  
-- Verify image file exists in `images/` directory
-- Check file path in config matches actual filename
-- Ensure image format is supported (JPG, PNG, GIF)
-
-### Sections Not Appearing
-- Check `sectionOrder` array includes your section IDs
-- Verify custom section `id` matches what's in `sectionOrder`
-- Ensure section has valid `items` array
-
-### Print/PDF Issues
-- Enable "Background graphics" in print settings
-- Use A4 paper size for best results
-- Check print preview before generating PDF
-
-## Security & Privacy
-
-⚠️ **Important**: Your `config/config.json` contains personal information!
-
-- Add `config/config.json` to `.gitignore` if using version control
-- Only share template files, never your personal config
-- Keep personal information private when sharing code
-
-## Browser Compatibility
-
-- ✅ Chrome/Chromium (recommended)
-- ✅ Firefox  
-- ✅ Safari
-- ✅ Edge
-- ⚠️ Internet Explorer not supported
-
-## Contributing
-
-Found a bug or want to add a feature? 
-
-1. Fork the repository
-2. Create your feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
 
 ## License
 
