@@ -16,6 +16,18 @@ A modern, dynamic CV/Resume template built with HTML, CSS, and JavaScript. This 
 - **📊 Skill Visualization**: Interactive dot-based skill level indicators
 - **🛠️ Software Tags**: Dynamic software/tools display
 
+## Example Resume
+
+
+**[📄 View PDF Example](images/example-resume.pdf)** - See the complete one-page resume generated from the example configuration.
+
+The example demonstrates:
+- Professional layout with gradient design
+- Skills visualization with dot indicators
+- Dynamic software tags
+- Multiple sections (Education, Experience, Certifications, Projects)
+- Clean typography and spacing optimized for both screen and print
+
 ## File Structure
 
 ```
@@ -23,33 +35,69 @@ Resume/
 ├── cv.html                     # Main HTML file (template)
 ├── styles.css                  # All CSS styling
 ├── script.js                   # JavaScript functionality
+├── config-builder.html         # Visual configuration builder with live preview
+├── example-resume.pdf          # Example PDF output
 ├── config/
 │   ├── config.template.json    # Template configuration file
+│   ├── example-config.json     # Example configuration with sample data
 │   └── config.json             # Your personal configuration (create from template)
 ├── images/                     # Profile images and other assets
+│   └── example-resume.png      # Screenshot of example resume
 └── README.md                   # This documentation
 ```
 
 ## Quick Start
 
-### 1. Initial Setup
+### Option 1: Visual Configuration Builder (Recommended)
+
+1. **Open the configuration builder**:
+   - Open `config-builder.html` in your browser
+   - Use the visual form interface to input your information
+   - See live preview of your resume as you make changes
+   - Download your configuration file when done
+
+2. **View your resume**:
+   - Open `cv.html` in your browser to see your completed resume
+
+### Option 2: Manual Configuration
 
 1. **Copy the template configuration file**:
    ```bash
    cp config/config.template.json config/config.json
    ```
 
-2. **Add your profile photo**:
+2. **View the example**:
+   ```bash
+   cp config/example-config.json config/config.json
+   ```
+   This will show you a complete example resume with sample data.
+
+3. **Add your profile photo**:
    - Place your photo in the `images/` directory
    - Update the `profileImage` path in your config
 
-3. **Edit your information**:
+4. **Edit your information**:
    - Open `config/config.json`
    - Update with your personal details, skills, experience, etc.
 
-4. **Open in browser**:
+5. **Open in browser**:
    - Simply open `cv.html` in your web browser
    - Your resume will load dynamically!
+
+### Generating PDF
+
+To create a PDF version of your resume:
+
+1. **Open your resume in browser**: Load `cv.html` with your configuration
+2. **Print to PDF**: Use your browser's print function (Ctrl+P / Cmd+P)
+3. **Print settings**:
+   - Destination: Save as PDF
+   - Layout: Portrait
+   - Margins: None or Minimal
+   - Options: Check "Background graphics" to preserve colors and gradients
+4. **Save**: Your professional PDF resume is ready!
+
+> **Tip**: The template is optimized for A4/Letter size printing with proper page breaks and background color preservation.
 
 ## Configuration Guide
 
