@@ -28,22 +28,38 @@ function setCSSVariables(configData) {
 
 // Set skill levels from config
 function setSkillLevels(skills, skillLabels) {
-    if (!skills || !skillLabels) return;
+    const skillsContainer = document.getElementById('skills-container');
+    if (!skillsContainer || !skills || !skillLabels) return;
+    
+    // Clear existing content
+    skillsContainer.innerHTML = '';
+    
+    // Create skills dynamically
     Object.entries(skills).forEach(([skillKey, level]) => {
         const skillName = skillLabels[skillKey];
         if (skillName) {
-            const skillElement = Array.from(document.querySelectorAll('.skills-category h3'))
-                .find(h3 => h3.textContent.trim() === skillName);
-            if (skillElement) {
-                const dotsContainer = skillElement.nextElementSibling;
-                const dots = dotsContainer.querySelectorAll('.dot');
-                // Reset all dots
-                dots.forEach(dot => dot.classList.remove('filled'));
-                // Fill dots up to the specified level
-                for (let i = 0; i < Math.min(level, dots.length); i++) {
-                    dots[i].classList.add('filled');
-                }
+            // Create skill category container
+            const skillCategory = document.createElement('div');
+            skillCategory.className = 'skills-category';
+            
+            // Create skill name
+            const skillTitle = document.createElement('h3');
+            skillTitle.textContent = skillName;
+            skillCategory.appendChild(skillTitle);
+            
+            // Create dots container
+            const dotsContainer = document.createElement('div');
+            dotsContainer.className = 'skill-dots';
+            
+            // Create 5 dots
+            for (let i = 1; i <= 5; i++) {
+                const dot = document.createElement('div');
+                dot.className = i <= level ? 'dot filled' : 'dot';
+                dotsContainer.appendChild(dot);
             }
+            
+            skillCategory.appendChild(dotsContainer);
+            skillsContainer.appendChild(skillCategory);
         }
     });
 }
