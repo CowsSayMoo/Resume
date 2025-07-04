@@ -1,5 +1,6 @@
-# Personal configuration file
-config/config.json
+# Personal configuration files
+config.yaml
+config/config.yaml
 
 # Image files (optional - remove if you want to track images)
 *.png
