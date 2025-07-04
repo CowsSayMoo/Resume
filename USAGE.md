@@ -18,35 +18,54 @@ This guide provides detailed instructions for customizing and using the Resume T
 
 ## Configuration Overview
 
-All resume content is controlled through the `config/config.json` file. The configuration is divided into several main sections:
+All resume content is controlled through the `config/config.yaml` file. The configuration uses YAML format, which is more readable and user-friendly than JSON. Here's the basic structure:
 
-```json
-{
-  "sectionLabels": {},      // Multi-language section headers
-  "sectionOrder": [],       // Order of main sections
-  "personal": {},           // Name, title, bio, profile image
-  "contactMethods": [],     // Contact information
-  "skills": {},             // Skill ratings (1-5)
-  "skillLabels": {},        // Skill display names
-  "software": [],           // Technology tags
-  "education": [],          // Education history
-  "experience": [],         // Work experience
-  "customSections": [],     // Additional sections (certifications, projects, etc.)
-  "theme": {}               // Colors, fonts, styling
-}
+```yaml
+# Section labels for internationalization
+sectionLabels: {}
+
+# Order of sections in main content area
+sectionOrder: []
+
+# Personal information
+personal: {}
+
+# Profile image path
+profileImage: ""
+
+# Contact information
+contactMethods: []
+
+# Skills with ratings and labels
+skills: {}
+skillLabels: {}
+
+# Software and technologies
+software: []
+
+# Education and experience
+education: []
+experience: []
+
+# Custom sections (certifications, projects, etc.)
+customSections: []
+
+# Theme configuration
+theme: {}
 ```
 
 ## Personal Information
 
 Configure your basic information in the `personal` section:
 
-```json
-"personal": {
-  "name": "Your Full Name",
-  "title": "Your Job Title",
-  "bio": "Brief professional summary highlighting your expertise and experience."
-},
-"profileImage": "images/your-photo.jpg"
+```yaml
+personal:
+  name: Your Full Name
+  title: Your Job Title
+  bio: Brief professional summary highlighting your expertise and experience.
+
+# Profile image (relative to images/ directory)
+profileImage: images/your-photo.jpg
 ```
 
 **Tips:**
@@ -58,39 +77,26 @@ Configure your basic information in the `personal` section:
 
 Add any number of contact methods. Each contact method has three parts:
 
-```json
-"contactMethods": [
-  {
-    "type": "email",           // Used for styling/icons
-    "label": "Email:",         // Display label
-    "value": "your@email.com"  // Actual contact info
-  },
-  {
-    "type": "phone",
-    "label": "Phone:",
-    "value": "+1 (555) 123-4567"
-  },
-  {
-    "type": "linkedin",
-    "label": "LinkedIn:",
-    "value": "linkedin.com/in/yourprofile"
-  },
-  {
-    "type": "github",
-    "label": "GitHub:",
-    "value": "github.com/yourusername"
-  },
-  {
-    "type": "website",
-    "label": "Portfolio:",
-    "value": "yourwebsite.com"
-  },
-  {
-    "type": "address",
-    "label": "Location:",
-    "value": "City, State/Country"
-  }
-]
+```yaml
+contactMethods:
+  - type: email           # Used for styling/icons
+    label: "Email:"       # Display label
+    value: your@email.com # Actual contact info
+  - type: phone
+    label: "Phone:"
+    value: "+1 (555) 123-4567"
+  - type: linkedin
+    label: "LinkedIn:"
+    value: linkedin.com/in/yourprofile
+  - type: github
+    label: "GitHub:"
+    value: github.com/yourusername
+  - type: website
+    label: "Portfolio:"
+    value: yourwebsite.com
+  - type: address
+    label: "Location:"
+    value: City, State/Country
 ```
 
 **Supported Types:**
@@ -100,19 +106,18 @@ Add any number of contact methods. Each contact method has three parts:
 
 Skills are displayed with visual dot indicators (1-5 scale):
 
-```json
-"skills": {
-  "programming": 4,      // Skill ID with rating (1-5)
-  "leadership": 5,
-  "design": 3,
-  "communication": 4
-},
-"skillLabels": {
-  "programming": "Programming",     // Display names
-  "leadership": "Team Leadership",
-  "design": "UI/UX Design",
-  "communication": "Communication"
-}
+```yaml
+skills:
+  programming: 4      # Skill ID with rating (1-5)
+  leadership: 5
+  design: 3
+  communication: 4
+
+skillLabels:
+  programming: Programming     # Display names
+  leadership: Team Leadership
+  design: UI/UX Design
+  communication: Communication
 ```
 
 **Skill Levels:**
@@ -128,36 +133,28 @@ Both sections use similar structure with highlights:
 
 ### Education
 
-```json
-"education": [
-  {
-    "degree": "Master of Science in Computer Science",
-    "school": "University Name, Location",
-    "period": "September 2020 - June 2022",
-    "highlights": [
-      "<strong>Thesis:</strong> Research topic title",
-      "<strong>GPA:</strong> 3.8/4.0, Magna Cum Laude",
-      "<strong>Relevant Coursework:</strong> Advanced Algorithms, Machine Learning"
-    ]
-  }
-]
+```yaml
+education:
+  - degree: Master of Science in Computer Science
+    school: University Name, Location
+    period: September 2020 - June 2022
+    highlights:
+      - "<strong>Thesis:</strong> Research topic title"
+      - "<strong>GPA:</strong> 3.8/4.0, Magna Cum Laude"
+      - "<strong>Relevant Coursework:</strong> Advanced Algorithms, Machine Learning"
 ```
 
 ### Experience
 
-```json
-"experience": [
-  {
-    "company": "Company Name",
-    "position": "Your Job Title",
-    "period": "January 2022 - Present",
-    "responsibilities": [
-      "Achievement with quantifiable impact and metrics",
-      "Responsibility highlighting technical skills and technologies",
-      "Leadership or collaboration example with results"
-    ]
-  }
-]
+```yaml
+experience:
+  - company: Company Name
+    position: Your Job Title
+    period: January 2022 - Present
+    responsibilities:
+      - Achievement with quantifiable impact and metrics
+      - Responsibility highlighting technical skills and technologies
+      - Leadership or collaboration example with results
 ```
 
 **Best Practices:**
@@ -172,51 +169,41 @@ Add unlimited custom sections for certifications, projects, awards, etc.
 
 ### List Type (Certifications, Awards)
 
-```json
-{
-  "id": "certifications",
-  "title": "Certifications",
-  "type": "list",
-  "items": [
-    {
-      "name": "AWS Certified Solutions Architect",
-      "date": "2023",
-      "description": "Cloud architecture design and implementation"
-    }
-  ]
-}
+```yaml
+- id: certifications
+  title: Certifications
+  type: list
+  items:
+    - name: AWS Certified Solutions Architect
+      date: "2023"
+      description: Cloud architecture design and implementation
 ```
 
 ### Detailed Type (Projects, Publications)
 
-```json
-{
-  "id": "projects",
-  "title": "Key Projects",
-  "type": "detailed",
-  "items": [
-    {
-      "title": "E-commerce Platform",
-      "subtitle": "Lead Developer - 2023",
-      "description": "Built scalable e-commerce solution serving 10K+ users",
-      "highlights": [
-        "Improved performance by 40%",
-        "Reduced infrastructure costs by $25k annually"
-      ]
-    }
-  ]
-}
+```yaml
+- id: projects
+  title: Key Projects
+  type: detailed
+  items:
+    - title: E-commerce Platform
+      subtitle: Lead Developer - 2023
+      description: Built scalable e-commerce solution serving 10K+ users
+      highlights:
+        - Improved performance by 40%
+        - Reduced infrastructure costs by $25k annually
 ```
 
 ### Grid Type (Languages, Additional Skills)
 
-```json
-{
-  "id": "languages",
-  "title": "Languages",
-  "type": "grid",
-  "items": ["English (Native)", "Spanish (Fluent)", "French (Basic)"]
-}
+```yaml
+- id: languages
+  title: Languages
+  type: grid
+  items:
+    - English (Native)
+    - Spanish (Fluent)
+    - French (Basic)
 ```
 
 ## Theme Customization
@@ -225,82 +212,78 @@ Customize colors, fonts, and styling:
 
 ### Basic Theme
 
-```json
-"theme": {
-  "colors": {
-    "primary": "#2563eb",           // Main accent color
-    "secondary": "#7c3aed",         // Secondary accent color
-    "sidebarBackground": "#1e293b", // Sidebar background
-    "textPrimary": "#1e293b",       // Main text color
-    "textSecondary": "#64748b"      // Secondary text color
-  },
-  "fontFamily": "'Inter', 'Helvetica Neue', Arial, sans-serif"
-}
+```yaml
+theme:
+  colors:
+    primary: "#2563eb"           # Main accent color
+    secondary: "#7c3aed"         # Secondary accent color
+    sidebarBackground: "#1e293b" # Sidebar background
+    textPrimary: "#1e293b"       # Main text color
+    textSecondary: "#64748b"     # Secondary text color
+  fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif"
 ```
 
 ### Advanced Theme with Custom Tag Colors
 
-```json
-"theme": {
-  "colors": {
-    "primary": "#2563eb",
-    "secondary": "#7c3aed",
-    "sidebarBackground": "#1e293b",
-    "textPrimary": "#1e293b",
-    "textSecondary": "#64748b",
-    "tagColors": {
-      "programming": "#10b981",     // Custom color for programming skill
-      "leadership": "#f59e0b",      // Custom color for leadership skill
-      "design": "#ef4444"           // Custom color for design skill
-    }
-  },
-  "fontFamily": "'Inter', sans-serif",
-  "backgroundGradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-}
+```yaml
+theme:
+  colors:
+    primary: "#2563eb"
+    secondary: "#7c3aed"
+    sidebarBackground: "#1e293b"
+    textPrimary: "#1e293b"
+    textSecondary: "#64748b"
+    tagColors:
+      programming: "#10b981"     # Custom color for programming skill
+      leadership: "#f59e0b"      # Custom color for leadership skill
+      design: "#ef4444"          # Custom color for design skill
+  fontFamily: "'Inter', sans-serif"
+  backgroundGradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
 ```
 
 ### Popular Color Schemes
 
 **Blue Professional:**
-```json
-"colors": {
-  "primary": "#2563eb",
-  "secondary": "#1d4ed8",
-  "sidebarBackground": "#1e3a8a"
-}
+```yaml
+colors:
+  primary: "#2563eb"
+  secondary: "#1d4ed8"
+  sidebarBackground: "#1e3a8a"
 ```
 
 **Green Fresh:**
-```json
-"colors": {
-  "primary": "#059669",
-  "secondary": "#047857",
-  "sidebarBackground": "#064e3b"
-}
+```yaml
+colors:
+  primary: "#059669"
+  secondary: "#047857"
+  sidebarBackground: "#064e3b"
 ```
 
 **Purple Creative:**
-```json
-"colors": {
-  "primary": "#7c3aed",
-  "secondary": "#6d28d9",
-  "sidebarBackground": "#581c87"
-}
+```yaml
+colors:
+  primary: "#7c3aed"
+  secondary: "#6d28d9"
+  sidebarBackground: "#581c87"
 ```
 
 ## Section Ordering
 
 Control which sections appear in the main content area and their order:
 
-```json
-"sectionOrder": ["education", "experience", "certifications", "projects"]
+```yaml
+sectionOrder:
+  - education
+  - experience
+  - certifications
+  - projects
 ```
 
 **Common Configurations:**
 
-- **Recent Graduate:** `["education", "experience", "projects", "certifications"]`
-- **Experienced Professional:** `["experience", "certifications", "education"]`
-- **Career Changer:** `["certifications", "projects", "experience", "education"]`
+- **Recent Graduate:** `[education, experience, projects, certifications]`
+- **Experienced Professional:** `[experience, certifications, education]`
+- **Career Changer:** `[certifications, projects, experience, education]`
 
 **Available Sections:**
 - `education` - Education history
@@ -311,38 +294,35 @@ Control which sections appear in the main content area and their order:
 
 Customize section headers for different languages:
 
-```json
-"sectionLabels": {
-  "contact": "Contact Information",
-  "skills": "Core Skills",
-  "software": "Technologies & Tools",
-  "education": "Education",
-  "experience": "Professional Experience"
-}
+```yaml
+sectionLabels:
+  contact: Contact Information
+  skills: Core Skills
+  software: Technologies & Tools
+  education: Education
+  experience: Professional Experience
 ```
 
 **Examples:**
 
 **Spanish:**
-```json
-"sectionLabels": {
-  "contact": "Información de Contacto",
-  "skills": "Habilidades",
-  "software": "Tecnologías",
-  "education": "Educación",
-  "experience": "Experiencia Profesional"
-}
+```yaml
+sectionLabels:
+  contact: Información de Contacto
+  skills: Habilidades
+  software: Tecnologías
+  education: Educación
+  experience: Experiencia Profesional
 ```
 
 **French:**
-```json
-"sectionLabels": {
-  "contact": "Coordonnées",
-  "skills": "Compétences",
-  "software": "Technologies",
-  "education": "Formation",
-  "experience": "Expérience Professionnelle"
-}
+```yaml
+sectionLabels:
+  contact: Coordonnées
+  skills: Compétences
+  software: Technologies
+  education: Formation
+  experience: Expérience Professionnelle
 ```
 
 ## Advanced Features
@@ -353,13 +333,13 @@ Create different configurations for different purposes:
 
 ```bash
 # Technical resume
-cp config/config.template.json config/config-tech.json
+cp config/config.template.yaml config/config-tech.yaml
 
 # Business resume
-cp config/config.template.json config/config-business.json
+cp config/config.template.yaml config/config-business.yaml
 
 # Academic resume
-cp config/config.template.json config/config-academic.json
+cp config/config.template.yaml config/config-academic.yaml
 ```
 
 ### Print Optimization
@@ -385,10 +365,9 @@ For best PDF results:
 
 Use Google Fonts or system fonts:
 
-```json
-"theme": {
-  "fontFamily": "'Roboto', 'Helvetica Neue', Arial, sans-serif"
-}
+```yaml
+theme:
+  fontFamily: "'Roboto', 'Helvetica Neue', Arial, sans-serif"
 ```
 
 **Popular Professional Fonts:**
@@ -404,8 +383,8 @@ Use Google Fonts or system fonts:
 
 **Problem:** Resume shows placeholder text
 **Solutions:**
-- Ensure `config/config.json` exists
-- Check JSON syntax with online validator
+- Ensure `config/config.yaml` exists
+- Check YAML syntax with online validator
 - Open browser console (F12) for error messages
 
 ### Images Not Displaying

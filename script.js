@@ -1,13 +1,14 @@
-// Function to load config from external file (required)
+// Function to load config from external YAML file (required)
 async function loadConfig() {
     try {
-        const response = await fetch('./config/config.json');
+        const response = await fetch('./config/config.yaml');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return await response.json();
+        const yamlText = await response.text();
+        return jsyaml.load(yamlText);
     } catch (error) {
-        console.error('Failed to load config/config.json:', error);
+        console.error('Failed to load config/config.yaml:', error);
         return {};
     }
 }

@@ -1,0 +1,161 @@
+# Resume Configuration
+# Enhanced example with additional content for demonstration
+
+# Section labels for internationalization
+sectionLabels:
+  contact: Contact Information
+  skills: Core Skills
+  software: Technologies & Tools
+  education: Education
+  experience: Professional Experience
+
+# Order of sections in main content area
+sectionOrder:
+  - education
+  - experience
+  - certifications
+  - projects
+
+# Personal information
+personal:
+  name: Alexandra Thompson
+  title: Senior Full Stack Developer
+  bio: Experienced software engineer with 8+ years building scalable web applications. Expertise in modern JavaScript frameworks, cloud architecture, and team leadership.
+
+# Profile image (relative to images/ directory)
+profileImage: images/tmp.png
+
+# Contact information
+contactMethods:
+  - type: address
+    label: "Location:"
+    value: San Francisco, CA
+  - type: phone
+    label: "Phone:"
+    value: "+1 (555) 123-4567"
+  - type: email
+    label: "Email:"
+    value: alexandra.thompson@email.com
+  - type: github
+    label: "GitHub:"
+    value: github.com/alexandra-dev
+  - type: linkedin
+    label: "LinkedIn:"
+    value: linkedin.com/in/alexandra-thompson
+
+# Skills with ratings (1-5 scale)
+skills:
+  frontend: 5
+  backend: 5
+  devops: 4
+  mobile: 3
+  database: 4
+  leadership: 4
+
+# Skill display names
+skillLabels:
+  frontend: Frontend Development
+  backend: Backend Development
+  devops: DevOps & Infrastructure
+  mobile: Mobile Development
+  database: Database Design
+  leadership: Team Leadership
+
+# Software and technologies
+software:
+  - JavaScript/TypeScript
+  - React
+  - Node.js
+  - Python
+  - PostgreSQL
+  - MongoDB
+  - AWS
+  - Docker
+  - Kubernetes
+  - Git
+  - GraphQL
+  - Jest
+  - Terraform
+  - Jenkins
+  - Redis
+  - Figma
+
+# Education history
+education:
+  - degree: Master of Science in Computer Science
+    school: Stanford University, California
+    period: September 2014 - June 2016
+    highlights:
+      - "<strong>Thesis:</strong> Machine Learning Approaches to Real-time Data Processing"
+      - "<strong>Relevant Coursework:</strong> Distributed Systems, Advanced Algorithms, HCI"
+      - "<strong>GPA:</strong> 3.8/4.0, Magna Cum Laude"
+  - degree: Bachelor of Science in Software Engineering
+    school: UC Berkeley, California
+    period: August 2010 - May 2014
+    highlights:
+      - "<strong>Senior Project:</strong> Real-time collaborative code editor"
+      - "<strong>Activities:</strong> Women in Tech Society President"
+
+# Work experience
+experience:
+  - company: TechFlow Solutions
+    position: Senior Full Stack Developer & Team Lead
+    period: March 2021 - Present
+    responsibilities:
+      - Lead team of 6 developers building microservices e-commerce platform serving 2M+ users
+      - Architected real-time inventory management system reducing stock discrepancies by 85%
+      - Established CI/CD pipelines improving deployment frequency by 300%
+      - Mentored junior developers and conducted technical interviews
+  - company: StartupTech Inc.
+    position: Full Stack Developer
+    period: June 2018 - February 2021
+    responsibilities:
+      - Developed React-based analytics dashboard with 50K+ daily active users
+      - Built RESTful APIs using Node.js handling 10M+ requests per month
+      - Implemented real-time notifications system using WebSockets and Redis
+      - Optimized database queries improving application performance by 40%
+
+# Custom sections (certifications, projects, etc.)
+customSections:
+  - id: certifications
+    title: Certifications
+    type: list
+    items:
+      - name: AWS Certified Solutions Architect
+        date: "2023"
+        description: Cloud architecture design and implementation
+      - name: Certified Kubernetes Administrator
+        date: "2022"
+        description: Container orchestration and cluster management
+      - name: Google Cloud Professional Developer
+        date: "2021"
+        description: Cloud-native application development
+  - id: projects
+    title: Key Projects
+    type: list
+    items:
+      - name: Real-time Analytics Dashboard
+        date: "2023"
+        description: Built monitoring dashboard processing 1M+ events/second with React and D3.js
+      - name: Open Source Component Library
+        date: "2022"
+        description: Published NPM package with 25K+ weekly downloads and TypeScript support
+
+# Theme configuration
+theme:
+  colors:
+    primary: "#2563eb"
+    secondary: "#7c3aed"
+    accent: "#06b6d4"
+    sidebarBackground: "#1e293b"
+    textPrimary: "#1e293b"
+    textSecondary: "#64748b"
+    tagColors:
+      frontend: "#10b981"
+      backend: "#f59e0b"
+      devops: "#ef4444"
+      mobile: "#8b5cf6"
+      database: "#06b6d4"
+      leadership: "#f97316"
+  fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif"
+  backgroundGradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"

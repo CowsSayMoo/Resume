@@ -1,0 +1,125 @@
+# Resume Configuration
+# This file controls all content and styling for your resume template.
+
+# Section labels for internationalization
+sectionLabels:
+  contact: Contact Information
+  skills: Core Skills
+  software: Technologies & Tools
+  education: Education
+  experience: Professional Experience
+
+# Order of sections in main content area
+sectionOrder:
+  - education
+  - experience
+  - certifications
+
+# Personal information
+personal:
+  name: Alexandra Thompson
+  title: Senior Full Stack Developer
+  bio: Experienced software engineer with 8+ years building scalable web applications. Expertise in modern JavaScript frameworks, cloud architecture, and team leadership.
+
+# Profile image (relative to images/ directory)
+profileImage: images/tmp.png
+
+# Contact information
+contactMethods:
+  - type: phone
+    label: "Phone:"
+    value: "+1 (555) 123-4567"
+  - type: email
+    label: "Email:"
+    value: alexandra.thompson@email.com
+  - type: github
+    label: "GitHub:"
+    value: github.com/alexandra-dev
+  - type: linkedin
+    label: "LinkedIn:"
+    value: linkedin.com/in/alexandra-thompson
+
+# Skills with ratings (1-5 scale)
+skills:
+  frontend: 5
+  backend: 5
+  devops: 4
+  leadership: 4
+
+# Skill display names
+skillLabels:
+  frontend: Frontend Development
+  backend: Backend Development
+  devops: DevOps & Infrastructure
+  leadership: Team Leadership
+
+# Software and technologies
+software:
+  - JavaScript/TypeScript
+  - React
+  - Node.js
+  - Python
+  - PostgreSQL
+  - AWS
+  - Docker
+  - Git
+  - GraphQL
+  - Jest
+  - Terraform
+  - Jenkins
+
+# Education history
+education:
+  - degree: Master of Science in Computer Science
+    school: Stanford University, California
+    period: September 2014 - June 2016
+    highlights:
+      - "<strong>Thesis:</strong> Machine Learning Approaches to Real-time Data Processing"
+      - "<strong>GPA:</strong> 3.8/4.0, Magna Cum Laude"
+
+# Work experience
+experience:
+  - company: TechFlow Solutions
+    position: Senior Full Stack Developer & Team Lead
+    period: March 2021 - Present
+    responsibilities:
+      - Lead team of 6 developers building microservices e-commerce platform serving 2M+ users
+      - Architected real-time inventory management system reducing stock discrepancies by 85%
+      - Established CI/CD pipelines improving deployment frequency by 300%
+  - company: StartupTech Inc.
+    position: Full Stack Developer
+    period: June 2018 - February 2021
+    responsibilities:
+      - Developed React-based analytics dashboard with 50K+ daily active users
+      - Built RESTful APIs using Node.js handling 10M+ requests per month
+      - Optimized database queries improving application performance by 40%
+
+# Custom sections (certifications, projects, etc.)
+customSections:
+  - id: certifications
+    title: Certifications
+    type: list
+    items:
+      - name: AWS Certified Solutions Architect
+        date: "2023"
+        description: Cloud architecture design and implementation
+      - name: Certified Kubernetes Administrator
+        date: "2022"
+        description: Container orchestration and cluster management
+
+# Theme configuration
+theme:
+  colors:
+    primary: "#2563eb"
+    secondary: "#7c3aed"
+    accent: "#06b6d4"
+    sidebarBackground: "#1e293b"
+    textPrimary: "#1e293b"
+    textSecondary: "#64748b"
+    tagColors:
+      frontend: "#10b981"
+      backend: "#f59e0b"
+      devops: "#ef4444"
+      leadership: "#f97316"
+  fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif"
+  backgroundGradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
